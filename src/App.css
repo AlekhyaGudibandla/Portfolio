@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+.custom-font {
+  font-family: 'Inter', sans-serif;
+}
+
+
+.sparkle-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #c084fc 0%, #faccf9 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: sparkleFade 0.5s forwards;
+  z-index: 9999;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive skills orbit */
+.skills-orbit {
+  --orbit-radius: 120px;
+}
+
+@media (min-width: 640px) {
+  .skills-orbit {
+    --orbit-radius: 140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .skills-orbit {
+    --orbit-radius: 180px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-orbit {
+    --orbit-radius: 220px;
+  }
+}
+
+/* White underline hover effect for navbar */
+.underline-hover-white {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.underline-hover-white::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ffffff, #e0e7ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  border-radius: 1px;
+}
+
+.underline-hover-white:hover::after {
+  transform: scaleX(1);
+}
+
+/* Purple underline hover effect for navbar when scrolled */
+.underline-hover-purple {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.underline-hover-purple::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #7c3aed, #a855f7);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  border-radius: 1px;
+}
+
+.underline-hover-purple:hover::after {
+  transform: scaleX(1);
+}
+
+/* Original purple underline hover effect */
+.underline-hover {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px; /* thicker underline */
+  background-color: #a855f7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  border-radius: 2px;
+}
+
+.underline-hover:hover::after {
+  transform: scaleX(1);
+}
+
+.underline-hover {
+  position: relative;
+  display: inline-block;
+}
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #c084fc, #93c5fd);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.underline-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* Enhanced animations */
+@keyframes sparkleFade {
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes floatStars {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating animation for elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Scroll-triggered animations */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced button hover effects */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-glow:hover::before {
+  left: 100%;
+}
+
+/* Custom styles for the portfolio */
+
+/* Navbar hover effects */
+.underline-hover-white {
+  position: relative;
+}
+
+.underline-hover-white::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(to right, #ffffff, #e0e7ff);
+  transition: width 0.3s ease;
+}
+
+.underline-hover-white:hover::after {
+  width: 100%;
+}
+
+.underline-hover-purple {
+  position: relative;
+}
+
+.underline-hover-purple::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(to right, #7c3aed, #c084fc);
+  transition: width 0.3s ease;
+}
+
+.underline-hover-purple:hover::after {
+  width: 100%;
+}
+
+/* Custom slider styles */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-track {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(135deg, #7c3aed, #c084fc);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.slider::-moz-range-track {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.slider::-moz-range-thumb {
+  background: linear-gradient(135deg, #7c3aed, #c084fc);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scroll fade in */
+@keyframes scrollFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-fade-in {
+  animation: scrollFadeIn 0.8s ease-out;
+}
+
+/* Button glow effect */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-glow:hover::before {
+  left: 100%;
+}
